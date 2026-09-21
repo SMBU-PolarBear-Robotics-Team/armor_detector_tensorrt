@@ -54,7 +54,7 @@ ament_auto_add_library(${PROJECT_NAME} SHARED
   DIRECTORY src
 )
 
-target_link_libraries(${PROJECT_NAME} 
+target_link_libraries(${PROJECT_NAME}
   ${PLUGINS}
   ${CUDA_LIBRARIES}
   ${TENSORRT_LIBRARY_DIRS}
