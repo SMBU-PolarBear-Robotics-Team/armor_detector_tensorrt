@@ -109,8 +109,8 @@ ArmorDetectorTensorrtNode::ArmorDetectorTensorrtNode(rclcpp::NodeOptions options
 
   img_sub_ = std::make_shared<image_transport::Subscriber>(image_transport::create_subscription(
     this, camera_name_ + "/image",
-    std::bind(&ArmorDetectorTensorrtNode::imgCallback, this, std::placeholders::_1), transport_type_,
-    use_sensor_data_qos ? rmw_qos_profile_sensor_data : rmw_qos_profile_default));
+    std::bind(&ArmorDetectorTensorrtNode::imgCallback, this, std::placeholders::_1),
+    transport_type_, use_sensor_data_qos ? rmw_qos_profile_sensor_data : rmw_qos_profile_default));
   RCLCPP_INFO(this->get_logger(), "Subscribing to %s", img_sub_->getTopic().c_str());
 
   RCLCPP_INFO(this->get_logger(), "Initializing finished.");
